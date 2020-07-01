@@ -1,0 +1,380 @@
+/*
+general selectors =================================================================
+*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background-color: #10002a;
+  color: white;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
+.p1,
+.p2{
+  display: inline;
+}
+
+/*
+variables =================================================================
+*/
+
+:root {
+  --neon-border-color: #08f;
+}
+
+/*
+fonts and text =================================================================
+*/
+
+@font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.flux {
+  font-family: neon;
+  color: #426DFB;
+  line-height: 30px;
+  text-shadow: 0 0 3vw #2356FF;
+}
+
+.flux {
+  animation: flux .001s alternate infinite;
+  -webkit-animation: flux .001s alternate infinite;
+  -moz-animation: flux .001s alternate infinite;
+}
+
+/*
+animations =================================================================
+*/
+
+@keyframes neon{
+  0%,
+  100% {
+    text-shadow: 1 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+}
+
+@keyframes btnActive{
+  0%,
+  100% {
+    text-shadow: 1 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+}
+
+@keyframes active {
+  0%,
+  100% {
+    text-shadow: 1 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+
+  50% {
+    text-shadow: 1 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+@keyframes flux {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+  50%{
+    color: rgb(35, 184, 218);
+  }
+}
+
+@keyframes flux-active{
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+  50%{
+    text-shadow: 0 0 0;
+  }
+}
+
+@keyframes x{
+  0%,
+  100% {
+    box-shadow: 0 0 3px 2px #FED128;
+    background-color: #FED128;
+  }
+  50% {
+    box-shadow: 0 0 3px 2px #800E0B;
+  }
+}
+
+@keyframes o{
+  0%,
+  100% {
+    box-shadow: 0 0 3px 2px #FED128;
+  }
+  50% {
+    box-shadow: 0 0 3px 2px #800E0B;
+  }
+}
+
+
+/*
+menu ========================================================
+*/
+
+#menu-msg{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: #16003b;
+  top: 0px;
+}
+
+#options{
+  min-width: 275px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#menu-title{
+  height: 50px;
+}
+
+.menu-buttons{
+  margin-top: 30px;
+  font-size: 30px;
+  position: relative;
+  top: 90px;
+}
+
+#pvp-btn,
+#ai-btn{
+  cursor: pointer;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+}
+
+#pvp-btn:hover,
+#ai-btn:hover{
+  color: #FED128;
+  animation: btnActive 1s ease infinite;
+  -moz-animation: btnActive 1s ease infinite;
+  -webkit-animation: btnActive 1s ease infinite;
+}
+
+
+/*
+title and player scores =================================================
+*/
+
+.title{
+  text-align: center;
+  font-size: 60px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  height: 165px;
+}
+
+.info{
+  width: 50%;
+  max-width: 600px;
+  min-width: 235px;
+  margin: auto;
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.neon span{
+  font-family: neon;
+  color: #FB4264;
+  font-size: 30px;
+  line-height: 50px;
+  text-shadow: 0 0 3vw #F40A35;
+  display: inline-block;
+  position: relative;
+}
+
+.neon span{
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+.active span{
+animation: active 1s ease infinite;
+-moz-animation: active 1s ease infinite;
+-webkit-animation: active 1s ease infinite;
+}
+
+/*
+grid section =================================================================
+*/
+
+.containter{
+    height: 300px;
+    width: 300px;
+    position: relative;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 0px;
+}
+
+.item{
+    height: 100px;
+    width: 100px;
+    border: 0.01rem solid var(--neon-border-color);
+}
+  
+/*
+x *************************
+*/
+
+.x{
+  width: 90%;
+  height: 90%;
+  position:relative;
+  left: 5px;
+  background-color: rgba(0,0,0,0);
+}
+
+.x:before,
+.x:after{
+  content:'';
+  position: absolute;
+  width: 95%;
+  height:4px;
+  background-color:#FED128;
+  border-radius:2px;
+  top:45px;
+  box-shadow:0 0 2px 0 #FED128;
+  animation: x .03s alternate infinite;
+  -webkit-animation: x .03s alternate infinite;
+  -moz-animation: x .03s alternate infinite;
+}
+
+.x:before{
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  transform:rotate(45deg);
+  left:2px;
+}
+
+.x:after{
+  -webkit-transform:rotate(-45deg);
+  -moz-transform:rotate(-45deg);
+  transform:rotate(-45deg);
+  right:2px;
+}
+
+/*
+o *************************
+*/
+
+.o{
+  height: 80%;
+  width: 80%;
+  position: relative;
+  right: -10px;
+  top: 10px;
+  border: 4px solid #FED128;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 100%;
+  animation: o .03s alternate infinite;
+  -webkit-animation: o .03s alternate infinite;
+  -moz-animation: o .03s alternate infinite;
+}
+
+/*
+button section =================================================================
+*/
+
+.buttons{
+  margin-top: 30px;
+  font-size: 30px;
+  position: relative;
+  top: 90px;
+}
+
+#reset,
+#continue{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 40px;
+  height: 100px;
+}
+
+#reset-btn,
+#continue-btn{
+  cursor: pointer;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+}
+
+#reset-btn:hover,
+#continue-btn:hover{
+  color: #FED128;
+  animation: btnActive 1s ease infinite;
+  -moz-animation: btnActive 1s ease infinite;
+  -webkit-animation: btnActive 1s ease infinite;
+}
+
+/*
+winner msg section =================================================================
+*/
+
+#msg{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: #16003b;
+  top: 0px;
+}
+
+#winner{
+  min-width: 275px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#winer p,
+#winner h1{
+  height: 50px;
+  font-size: 70px;
+}
+
+/*
+visibility manipulation =================================================================
+*/
+
+.hide{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.show{
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+}
