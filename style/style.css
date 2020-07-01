@@ -176,6 +176,17 @@ menu ========================================================
   -webkit-animation: btnActive 1s ease infinite;
 }
 
+/*
+game =================================================
+*/
+
+#game{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: #16003b;
+  top: 0px;
+}
 
 /*
 title and player scores =================================================
