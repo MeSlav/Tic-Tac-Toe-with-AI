@@ -62,6 +62,7 @@ function checkWinner(table, currPlayer){
     
     if(horizontal || vertical || diagonal){
         console.log(currPlayerClass, "won!");
+        document.getElementById("game").className = "hide";
         document.getElementById("winner").childNodes[1].innerHTML = `${currPlayerClass} WON!`;
         document.getElementById("msg").classList = "show";
         currPlayer.children[currPlayer.children.length-1].innerHTML = parseInt(currPlayer.children[currPlayer.children.length-1].innerHTML) +  1;
@@ -70,6 +71,7 @@ function checkWinner(table, currPlayer){
     }
     if(isTied){
         console.log("tied");
+        document.getElementById("game").className = "hide";
         document.getElementById("winner").childNodes[1].innerHTML = "Tied!";
         document.getElementById("msg").classList = "show";
     }
@@ -96,7 +98,8 @@ function continueGame(){
     [...document.getElementById("containter").children].forEach(e=>e.innerHTML="");
     document.getElementById("msg").classList = "hide";
     p1.classList = "p1 neon active";
-    p2.classList = "p2 neon"
+    p2.classList = "p2 neon";
+    document.getElementById("game").className = "show";
 }
 
 
